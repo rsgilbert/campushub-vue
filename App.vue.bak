@@ -1,0 +1,34 @@
+<template>
+  <div id="app">
+	<button @click="selectedCmp='appBook'">Book</button>
+	<button @click="selectedCmp='appSong'">song</button>
+	<button @click="selectedCmp='appMovie'">movie</button>
+
+	<keep-alive>
+		<component :is="selectedCmp">
+			<h2 slot="title">Bittencoat</h2>
+			<p slot>{{ slogan }}</p>
+		</component>
+	</keep-alive>
+  </div>
+</template>
+
+<script>
+	import Movie from './components/Movie.vue'
+	import Book from './components/Book.vue'
+	import Song from './components/Song.vue'
+
+	export default {
+		data: () => ({
+			slogan: "Omega search",
+			selectedCmp: 'appMovie'
+		}),
+		components: {
+			appMovie: Movie,
+			appBook: Book,
+			appSong: Song
+		},
+	}
+	
+</script>
+
