@@ -27,6 +27,7 @@
 <style scoped>
 	#app {
 		min-height: 100vh;
-		background: #ccc;
+		background: #cccccc;
+		padding: 0 1rem;
 	}
 </style>
