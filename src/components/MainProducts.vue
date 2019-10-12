@@ -1,6 +1,6 @@
 <template>
     <div id="main__products">
-        <div class="main__product" v-for="product in products">
+        <div v-for="product in products">
 			<main-product :product="product"></main-product>
         </div>
     </div>
@@ -20,19 +20,19 @@
 				products: [
 				{
 					name: "Samsung S7 Edged",
-					price: "450,000",
+					price: 450000,
 					src: "https://logenson.sirv.com/campushub/s7_2.jpeg"
 				}, {
 					name: "Samsung S8",
-					price: "650,000",
+					price: 650000,
 					src: "https://logenson.sirv.com/campushub/s8_1.jpeg"
 				}, 	{
 					name: "Samsung S7 Edged",
-					price: "450,000",
+					price: 450000,
 					src: "https://logenson.sirv.com/campushub/s7_2.jpeg"
 				}, {
 					name: "Samsung S8",
-					price: "650,000",
+					price: 650000,
 					src: "https://logenson.sirv.com/campushub/s8_1.jpeg"
 				}, 
 			]
