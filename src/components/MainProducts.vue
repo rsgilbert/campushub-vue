@@ -9,6 +9,9 @@
 <script>
 	import MainProduct from './MainProduct'
 
+	
+
+
     export default {
         name: "MainProducts",
 		components: {
@@ -17,7 +20,20 @@
 
 		data: function() {
 			return {
-				products: [
+
+			}
+		}, 
+		methods: {
+		},
+		computed: {
+			products: function() {
+				return this.$store.getters.getProducts
+			}
+		}
+    }
+
+	/*
+	products: [
 				{
 					name: "Samsung S7 Edged",
 					price: 450000,
@@ -36,11 +52,7 @@
 					src: "https://logenson.sirv.com/campushub/s8_1.jpeg"
 				}, 
 			]
-			}
-		}, 
-		methods: {
-		}
-    }
+			*/
 </script>
 
 <style scoped>
