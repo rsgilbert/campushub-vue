@@ -11,7 +11,7 @@ var API_URL = 'http://localhost:8000/api/shop/products'
 export const store = new Vuex.Store({
 	state: {
 		cartedProducts: [],
-		products: []
+		products: [],
 	},
 	getters: {
 		getProducts: function(state) {
@@ -21,7 +21,7 @@ export const store = new Vuex.Store({
 					return response.json()				
 				})
 				.then(function(myJson) {
-					state.products = myJson.products
+					state.products = myJson
 				})
 			}
 			return state.products

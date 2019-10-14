@@ -1,12 +1,12 @@
 <template>
-	<div id="main__product">
-		<main-product-image :src="product.src" :carted="carted"></main-product-image>
+	<div id="shop__product">
+		<shop-product-image :src="product.src" :carted="carted"></shop-product-image>
 		<div class="product__detail">
 			<h3 class="product__name"> {{ product.name }}</h3>
 			<h3 class="product__price"> {{ product.price }} /= </h3>
 		</div> 
-		<div class="main__actions">
-			<button class="button__visit">VISIT</button>
+		<div class="shop__actions">
+			<button class="button__visit" @click="toItem">VISIT</button>
 			<button class="button__cart" 
 				v-on:click="makeCart"
 				:style="cartStyle"
@@ -16,9 +16,9 @@
 </template>
 
 <script>
-	import MainProductImage from './MainProductImage'
+	import ShopProductImage from './ShopProductImage'
     export default {
-        name: "MainProduct",
+        name: "ShopProduct",
 		props: ['product'],
 		data() {
 			return {
@@ -27,7 +27,7 @@
 			}
 		},
 		components: {
-			'MainProductImage': MainProductImage,
+			'ShopProductImage': ShopProductImage,
 		},
 		methods: {
 			makeCart: function(event) {
@@ -46,6 +46,9 @@
 			},
 			decrement: function() {
 				this.$store.commit('removeProduct', this.product)
+			},
+			toItem: function() {
+				this.$router.push({path: "/shop/" + this.product.id})
 			}
 
 		},
@@ -62,7 +65,7 @@
 </script>
 
 <style scoped>
-	.main__product {
+	.shop__product {
 		display: flex;
 		flex-direction: column;
 		padding: 1rem;
@@ -85,7 +88,7 @@
 		color: #737373;
 	}
 
-	.main__actions {
+	.shop__actions {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;

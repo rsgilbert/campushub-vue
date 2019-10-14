@@ -1,21 +1,21 @@
 <template>
-    <div id="main__products">
+    <div id="shop__products">
         <div v-for="product in products">
-			<main-product :product="product"></main-product>
+			<shop-product :product="product"></shop-product>
         </div>
     </div>
 </template>
 
 <script>
-	import MainProduct from './MainProduct'
+	import ShopProduct from './ShopProduct'
 
 	
 
 
     export default {
-        name: "MainProducts",
+        name: "ShopProducts",
 		components: {
-			'MainProduct': MainProduct
+			'ShopProduct': ShopProduct
 		},
 
 		data: function() {
@@ -24,6 +24,7 @@
 			}
 		}, 
 		methods: {
+
 		},
 		computed: {
 			products: function() {
@@ -56,7 +57,7 @@
 </script>
 
 <style scoped>
-#main__products {
+#shop__products {
     display: flex;
     flex-direction: row;
 	flex-wrap: wrap;

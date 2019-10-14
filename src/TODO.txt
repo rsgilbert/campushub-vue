@@ -1,0 +1,27 @@
+Add swaps on images
+
+Create a slugfield using slugify to turn the
+names of products into slugs and use the slugs as id for the description url
+
+Work on the ShopProduct vue to make sure the Cart button text
+and appearance truly depicts the product state in the Cart store
+
+Use sweetalert2 to create very beautify dialogs 
+for use when submitting an order
+
+Remove the checkout button on ShopProducts if necessary
+
+Get icons to show Cart
+
+
+DISCUSSIONS
+Allow a person to comment on the page after making a successful purchase
+
+
+
+GREAT WEBSITES TO CHECKOUT
+css-tricks.com
+sweetalert2.js.org/guides/
+arnest
+
+

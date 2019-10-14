@@ -9,7 +9,7 @@
 </template>
 
 <script>
-	import CartedProducts from './CartedProducts'
+	import CartedProducts from '../Main/Cart/CartedProducts'
 	export default {
 		data: function() { 
 			return {

@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: "MainSearch",
+        name: "ShopSearch",
         data: () => ({
           searchString: "",
         }),

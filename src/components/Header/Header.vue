@@ -1,21 +1,27 @@
 <template>
 	<div id="header">
 		<div id="nav">
-			<a href="#" id="logo__link">
+			<a href="#" id="logo__link" @click="toHome">
 				<img id="logo__image" :src="logo"/>
 				<h5 id="logo__title">CampusHub</h5>
 			</a>
-			<div id="nav__options">
-				<h3 class="option">Messages</h3>
-			</div>
+			<ul id="nav__options">
+				<router-link to="/shop" active-class="active">
+					<a>Shop</a>
+				</router-link>	
+				<router-link to="/cart" active-class="active">
+					<a>Cart</a>
+				</router-link>
+				
+			</ul>
 		</div>
-		<main-cart v-show="cartActive"></main-cart>
+		<header-cart v-show="cartActive"></header-cart>
 	</div>
 </template>
 
 <script>
-	  import MainCart from './MainCart';
-	  var icon = require('../assets/basket.png')
+	  import HeaderCart from './HeaderCart';
+	  var icon = require('../../assets/basket.png')
 
 	  export default {
 		data: function(){
@@ -24,11 +30,16 @@
 			}
 		},
 		components: {
-			mainCart: MainCart,
+			HeaderCart: HeaderCart,
 		},
 		computed: {
 			cartActive: function() {
 				return this.$store.getters.getTotal !== 0
+			}
+		},
+		methods: {
+			toHome: function() {
+				this.$router.push({path: '/'})
 			}
 		}
 	  }
@@ -54,6 +65,7 @@
 		margin: 0 0;
 		padding: 0 0.3rem;
 		width: 100%;
+		list-stcartyle: none;
 
 	}
 	#logo__link {
@@ -65,6 +77,9 @@
 		text-decoration: none;
 		color: #1b5810;
 		cursor: pointer;
+	}
+	.active {
+		color: darkgreen;
 	}
 
 
