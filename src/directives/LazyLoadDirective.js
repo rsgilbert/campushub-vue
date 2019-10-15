@@ -11,7 +11,7 @@ export default {
 					}, 100)
 				})
 				imageElement.addEventListener("error", function() {
-					console.err("Error loading image")
+					console.log("Error loading image")
 				})
 				imageElement.src = imageElement.dataset.url
 			}
@@ -27,7 +27,7 @@ export default {
 		function createObserver() {
 			const options = {
 				root: null,
-				threshold: "0.25",
+				threshold: "0",
 			}
 			const observer = new IntersectionObserver(handleIntersect, options)
 			observer.observe(el)

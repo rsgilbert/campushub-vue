@@ -1,5 +1,6 @@
 <template>
 	<div id="cart"
+		v-on:click="displayCart"
 		v-on:mouseover="onBasketHover"
 		v-on:mouseleave="onBasketUnhover">
 		<div id="basket">{{ cartCount }}</div>
@@ -25,6 +26,9 @@
 			},
 			onBasketUnhover: function() {
 				this.isBasketHovered = false;
+			},
+			displayCart: function() {
+				this.$swal("Cart", "You have no items on cart", "question")
 			}
 		},
 		computed: {

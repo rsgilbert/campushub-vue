@@ -1,24 +1,43 @@
 <template>
-	<figure v-lazyload class="image__wrapper">
-		<ImageSpinner
-			class="image__spinner"
-		/>
-		<img 
-			class="image__item"
+	<div class="Sirv" v-lazyload>
+		<img
+			id="image__item"
 			:data-url="source"
-			alt="item image"
-		>
-	</figure>
+			alt="img"
+		/>
+	</div>
 </template>
 
 <script>
 	export default {
 		name: "ImageItem",
+		data: function() {
+			return {
+				iszoom: false,
+			}
+		},
 		props: {
 			'source': {
 				type: String,
 				required: true,
 			}
 		},
+		methods: {
+			makeZoom: function() {
+				this.iszoom = !this.iszoom
+			}
+		}
 	}
 </script>
+
+<style scoped>
+	#image__item {
+		width: 15rem;
+		height: 15rem;
+	}
+	#zoombutton {
+		width: 100%;
+		height: 2rem;
+		background: blue;
+	}
+</style>

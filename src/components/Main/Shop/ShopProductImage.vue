@@ -1,8 +1,8 @@
 <template>
 	<div id="shopproductimage">
 		<div class="product__img--background">
-			<div class="product__img--picture" 
-				v-bind:style="{ 'background-image': 'url(' + src  + ')' }">
+			<div class="product__img--picture">
+				<image-item :source="src"></image-item>
 				<div class="cartedBadge" :class="{ hideCartBadge: !carted }">
 					<p class="cartedBadge__text">ON CART</p>
 				</div>
@@ -12,13 +12,13 @@
 </template>
 
 <script>
-	import ../../Reusables/ImageItem
+	import ImageItem from '../../Reusables/ImageItem'
 
 	export default {
 		name: "ShopProductImage",
 		props: ['src', 'carted'],
 		components: {
-			ImageItem: ImageItem,
+			'ImageItem': ImageItem,
 		},
 		computed: {
 			showCartBadge: function() {
@@ -26,12 +26,15 @@
 			}
 		}
 	}
+
+	// Useful to remember:
+	// v-bind:style="{ 'background-image': 'url(' + src  + ')' }"
 </script>
 
 <style scoped>
 	.product__img--background {
 		border-radius: 4px;
-		background: #cff7da;
+		background: #f2f2f4;
 		background-position: center;
 		background-size: cover;
 		
@@ -45,7 +48,7 @@
 	}
 	.product__img--picture {
 		border-radius: 4px;
-		background: #cff7da;
+		background: #f2f2f4;
 		background-position: center;
 		background-size: cover;
 		height: 17rem;
